@@ -117,12 +117,14 @@ on post-fs-data
     mkdir /dev/socket/location/xtra 0770 gps gps
 
     # SSC/SLPI sensors
-    mkdir /mnt/vendor/persist/sensors 0775 system root
+    mkdir /mnt/vendor/persist/sensors 0775 root system
     write /mnt/vendor/persist/sensors/sensors_settings 1
-    chown system root /mnt/vendor/persist/sensors/sensors_settings
-    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
-    chown system system /mnt/vendor/persist/PRSensorData.txt
-    chmod 0600 /mnt/vendor/persist/PRSensorData.txt
+    chown root system /persist/sensors/sensors_settings
+    chmod 0664 /persist/sensors/sensors_settings
+    chown root system /persist/sensors/sns.reg
+    chmod 0664 /persist/sensors/sns.reg
+    chown system system /persist/PRSensorData.txt
+    chmod 0600 /persist/PRSensorData.txt
 
     setprop vold.post_fs_data_done 1
 
@@ -320,8 +322,11 @@ service vendor.dataqti /vendor/bin/qti
 
 service vendor.sensors /vendor/bin/sensors.qti
     class main
-    user root
-    group root
+    user system
+    group system
+    # Grants the ability for this daemon to bind IPC router ports so it can
+    # register QMI services
+    capabilities NET_BIND_SERVICE
     writepid /dev/cpuset/system-background/tasks
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
