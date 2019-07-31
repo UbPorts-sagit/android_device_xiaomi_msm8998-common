@@ -54,6 +54,8 @@ BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 
