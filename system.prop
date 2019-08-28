@@ -133,6 +133,7 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=22,22
 ro.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1
+ril.num_slots=2
 
 # Media
 media.aac_51_output_enabled=true
