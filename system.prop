@@ -191,3 +191,8 @@ persist.sys.wfd.virtual=0
 # Wlan
 ro.wlan.mimo=1
 wifi.interface=wlan0
+
+# Settings for droidmedia
+camera.fifo.disable=1
+persist.camera.shutter.disable=1
+persist.media.metrics.enabled=0
