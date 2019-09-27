@@ -19,10 +19,12 @@ import re
 
 def FullOTA_Assertions(info):
   AddTrustZoneAssertion(info, info.input_zip)
+  RemoveGcamData(info)
   return
 
 def IncrementalOTA_Assertions(info):
   AddTrustZoneAssertion(info, info.target_zip)
+  RemoveGcamData(info)
   return
 
 def AddTrustZoneAssertion(info, input_zip):
@@ -33,4 +35,9 @@ def AddTrustZoneAssertion(info, input_zip):
     if len(versions) and '*' not in versions:
       cmd = 'assert(xiaomi.verify_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
       info.script.AppendExtra(cmd)
+  return
+
+def RemoveGcamData(info):
+  cmd = 'delete_recursive("/data/data/com.google.android.GoogleCamera");'
+  info.script.AppendExtra(cmd)
   return
