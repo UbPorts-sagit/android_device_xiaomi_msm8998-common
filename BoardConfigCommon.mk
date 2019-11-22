@@ -255,6 +255,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 #allow arm64 libhybris
 HYBRIS_MEDIA_32_BIT_ONLY := false
 
+CAMERA_SERVICE_WANT_UBUNTU_HEADERS := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
