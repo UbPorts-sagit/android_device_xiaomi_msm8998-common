@@ -322,4 +322,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
     $(LOCAL_PATH)/ubports/apparmor.d/hardware/graphics.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android \
     $(LOCAL_PATH)/ubports/apparmor.d/hardware/video.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/video.d/apparmor-easyprof-ubuntu_android \
-    $(LOCAL_PATH)/ubports/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml
+    $(LOCAL_PATH)/ubports/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubports/timekeeper.conf:system/halium/etc/init/timekeeper.conf
+
