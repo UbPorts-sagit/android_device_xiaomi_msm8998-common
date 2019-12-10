@@ -289,5 +289,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
-    $(LOCAL_PATH)/ubports/ofono.override:system/halium/etc/init/ofono.override
+    $(LOCAL_PATH)/ubports/ofono.override:system/halium/etc/init/ofono.override \
+    $(LOCAL_PATH)/ubports/timekeeper.conf:system/halium/etc/init/timekeeper.conf
 
