@@ -182,6 +182,9 @@ on boot
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
+    # Battery charging management
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled
+
 # msm specific files that need to be created on /data
 on post-fs-data
     # Create directory for TZ Apps
