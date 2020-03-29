@@ -300,6 +300,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Enable dynamic partition size
+PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
