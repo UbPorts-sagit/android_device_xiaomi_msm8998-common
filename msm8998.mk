@@ -404,7 +404,10 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 PRODUCT_PACKAGES += \
     libbiometry_fp_api \
     libubuntu_application_api
-    
+
+PRODUCT_PACKAGES += \
+    sensorservice
+
 # init scripts
 PRODUCT_PACKAGES += \
     init.halium.rc \
