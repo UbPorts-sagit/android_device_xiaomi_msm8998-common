@@ -420,6 +420,11 @@ PRODUCT_PACKAGES += \
     minisfservice \
     miniafservice
 
+# Ubuntu
+PRODUCT_PACKAGES += \
+    libbiometry_fp_api \
+    libubuntu_application_api
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
