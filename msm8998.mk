@@ -410,6 +410,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.halium.rc
 
+PRODUCT_PACKAGES += \
+    sensorservice
+
 # Misc
 PRODUCT_PACKAGES += \
     libandroid \
