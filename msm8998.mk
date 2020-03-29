@@ -399,6 +399,27 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Halium/UBports
+
+# Misc
+PRODUCT_PACKAGES += \
+    libion
+
+# Media
+PRODUCT_PACKAGES += \
+    libmedia_omx
+
+# Hybris compat libs
+PRODUCT_PACKAGES += \
+    libmedia_compat_layer \
+    libui_compat_layer
+
+# Droidmedia
+PRODUCT_PACKAGES += \
+    libdroidmedia \
+    minimediaservice \
+    minisfservice \
+    miniafservice
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
