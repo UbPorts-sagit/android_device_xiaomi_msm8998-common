@@ -409,11 +409,15 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libmedia_omx
+    libmedia_omx \
+    drmserver \
+    mediadrmserver \
+    mediaextractor
 
 # Hybris compat libs
 PRODUCT_PACKAGES += \
     libmedia_compat_layer \
+    libsf_compat_layer \
     libui_compat_layer
 
 # Droidmedia
