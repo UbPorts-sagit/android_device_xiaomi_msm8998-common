@@ -437,7 +437,8 @@ PRODUCT_PACKAGES += \
 
 # init scripts
 PRODUCT_PACKAGES += \
-    init.halium.rc
+    init.halium.rc \
+    init.disabled.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
