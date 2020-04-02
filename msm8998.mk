@@ -434,7 +434,8 @@ PRODUCT_PACKAGES += \
     
 # init scripts
 PRODUCT_PACKAGES += \
-    init.halium.rc
+    init.halium.rc \
+    init.disabled.rc
 
 # Misc
 PRODUCT_PACKAGES += \
