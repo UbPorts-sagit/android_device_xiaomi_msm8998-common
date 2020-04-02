@@ -412,7 +412,8 @@ PRODUCT_PACKAGES += \
     
 # init scripts
 PRODUCT_PACKAGES += \
-    init.halium.rc
+    init.halium.rc \
+    init.disabled.rc
 
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
