@@ -399,6 +399,13 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Halium/UBports
+
+# Misc
+PRODUCT_PACKAGES += \
+    libandroid \
+    libandroid_runtime
+
+# Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
