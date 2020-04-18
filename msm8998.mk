@@ -396,3 +396,8 @@ PRODUCT_PACKAGES += \
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
+
+# Halium/UBports
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
