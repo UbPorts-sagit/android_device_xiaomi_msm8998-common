@@ -306,6 +306,9 @@ PRODUCT_PACKAGES += \
 # Droidmedia
 MINIMEDIA_SENSORSERVER_DISABLE := 1
 
+# Droidmedia: We need this for video recorder to be fixed.
+MINIMEDIA_AUDIOPOLICYSERVICE_ENABLE := 1
+
 # telepathy-ofono quirks
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.t-o.quirk.forcesink=sink.primary_output \
