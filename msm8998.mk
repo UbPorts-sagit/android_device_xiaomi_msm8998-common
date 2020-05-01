@@ -276,5 +276,51 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
+# Ubuntu Touch Fix MTP connection
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/usbinit/setupusb:system/halium/usr/share/usbinit/setupusb \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/init/mtp-state.conf:system/halium/etc/init/mtp-state.conf
+
+PRODUCT_PACKAGES += \
+    libubuntu_application_api \
+    direct_ubuntu_application_sensors_c_api_for_hybris_test \
+    direct_ubuntu_application_sensors_for_hybris_test \
+    libcameraservice \
+    libdroidmedia \
+    libcamera_compat_layer \
+    libmedia_compat_layer \
+    libui_compat_layer \
+    libsf_compat_layer \
+    minimediaservice \
+    minisfservice \
+    libminisf \
+    libaudioflingerglue \
+    miniafservice
+
+## Disable FakeSensorServer so UBports can use it
+MINIMEDIA_SENSORSERVER_DISABLE := 1
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/system/etc/init/servicemanager.rc:system/etc/init/servicemanager.rc \
+    $(LOCAL_PATH)/rootdir/system/etc/init_hcismd_up.sh:system/etc/init_hcismd_up.sh \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/init/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/init/ofono.override:system/halium/etc/init/ofono.override \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/init/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/ubuntu-touch-session.d/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/rootdir/system/halium/lib/udev/rules.d/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/apparmor/hardware/video.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/video.d/apparmor-easyprof-ubuntu_android \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/powerd/device_configs/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/upstart/sessions/mtp-server.conf:system/halium/usr/share/upstart/sessions/mtp-server.conf \
+    $(LOCAL_PATH)/rootdir/system/halium/usr/share/upstart/sessions/usensord.conf:system/halium/usr/share/upstart/sessions/usensord.conf \
+    $(LOCAL_PATH)/rootdir/system/halium/etc/pulse/touch.pa:system/halium/etc/pulse/touch.pa
+
+# telepathy-ofono quirks Commented as per Ubports-santoni fix for voicecall loudspeaker
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.t-o.quirk.forcesink=sink.primary_output \
+    ro.t-o.quirk.forcesource=source.record_24_primary_input \
+
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)

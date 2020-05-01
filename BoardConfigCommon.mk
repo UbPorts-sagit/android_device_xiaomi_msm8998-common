@@ -255,5 +255,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
+#allow arm64 libhybris
+HYBRIS_MEDIA_32_BIT_ONLY := false
+
 # Inherit from proprietary files
 include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
