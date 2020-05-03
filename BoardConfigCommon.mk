@@ -56,6 +56,7 @@ BOARD_KERNEL_CMDLINE += systemd.legacy_systemd_cgroup_controller=yes
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 # CMDLINES for Halium
 BOARD_KERNEL_CMDLINE += console=tty0
+BOARD_KERNEL_CMDLINE += apparmor=1 security=apparmor
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
