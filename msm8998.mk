@@ -427,6 +427,10 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Halium/UBports
 
+# init scripts
+PRODUCT_PACKAGES += \
+    init.halium.rc
+
 # Misc
 PRODUCT_PACKAGES += \
     libandroid \
