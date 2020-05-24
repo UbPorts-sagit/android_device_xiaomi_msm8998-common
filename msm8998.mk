@@ -398,6 +398,12 @@ PRODUCT_PACKAGES += \
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
+# Halium/UBports
+
+# init scripts
+PRODUCT_PACKAGES += \
+    init.halium.rc
+
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/lib/udev/rules.d/70-android.rules:$(TARGET_COPY_OUT_SYSTEM)/halium/lib/udev/rules.d/70-android.rules \
