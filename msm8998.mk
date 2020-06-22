@@ -397,3 +397,15 @@ PRODUCT_PACKAGES += \
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
+
+# Ubuntu Touch overlay
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/halium-overlay/lib/udev/rules.d/70-android.rules:$(TARGET_COPY_OUT_SYSTEM)/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/halium-overlay/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9 \
+    $(LOCAL_PATH)/halium-overlay/usr/sbin/mount-android.sh:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/sbin/mount-android.sh \
+    $(LOCAL_PATH)/halium-overlay/etc/ubuntu-touch-session.d/android.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/init/lxc-android-config.override:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/lxc-android-config.override \
+    $(LOCAL_PATH)/halium-overlay/etc/init/mount-android.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/mount-android.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/init/urfkill.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/urfkill.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/ofono/main.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ofono/main.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/ofono/ril_subscription.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ofono/ril_subscription.conf
