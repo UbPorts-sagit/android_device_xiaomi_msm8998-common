@@ -224,6 +224,17 @@ service readmac /system/bin/readmac
     group qcom_diag
     oneshot
 
+
+# minimediaservice service
+service minimedia /system/bin/minimediaservice
+    setenv LD_LIBRARY_PATH /system/lib:/system/vendor/lib
+    class main
+    user media
+    group audio camera
+    ioprio rt 4
+    setenv LD_PRELOAD /system/lib/libOmxVdec.so
+    setenv MINIMEDIA_SENSORSERVER_DISABLE 1
+
 on charger
     write /sys/class/input/input0/enabled 0
     write /sys/class/input/input1/enabled 0

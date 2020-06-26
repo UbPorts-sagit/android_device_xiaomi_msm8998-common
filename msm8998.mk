@@ -281,6 +281,29 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Halium/UBports
 
+# Ubuntu Touch Mir/hybris integration
+PRODUCT_PACKAGES += \
+    libaudioflingerglue \
+    libminisf \
+    miniafservice \
+    minimediaservice \
+    gst-droid \
+    libmedia_compat_layer \
+    libsf_compat_layer \
+    libubuntu_application_api \
+    libcameraservice \
+    libdroidmedia \
+    libcamera_compat_layer \
+    camera_service \
+    gst-droid \
+    libmedia_compat_layer \
+    libui_compat_layer \
+    libsf_compat_layer \
+    minisfservice
+
+# Droidmedia
+MINIMEDIA_SENSORSERVER_DISABLE := 1
+
 # telepathy-ofono quirks
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.t-o.quirk.forcesink=sink.primary_output \
