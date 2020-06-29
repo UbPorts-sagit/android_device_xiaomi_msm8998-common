@@ -309,6 +309,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.t-o.quirk.forcesink=sink.primary_output \
     ro.t-o.quirk.forcesource=source.primary_input
 
+# droidmedia doesn't support HAL3 yet
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=0
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
