@@ -60,10 +60,10 @@ on fs
     chown system system /dev/tiload_node
     chmod 660 /dev/tiload_node
 
-#on post-fs
-#    start qseecomd
-#    exec - root root root -- /system/bin/init.qti.qseecomd.sh
-#    write /dev/ipa 1
+on post-fs
+    start qseecomd
+    exec - root root root -- /system/bin/init.qti.qseecomd.sh
+    write /dev/ipa 1
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -143,10 +143,10 @@ service qvop-daemon /system/bin/qvop-daemon
     user system
     group system drmrpc
 
-#service qseecomd /system/bin/qseecomd
-#    class core
-#    user root
-#    group root
+service qseecomd /system/bin/qseecomd
+    class core
+    user root
+    group root
 
 service thermal-engine /system/vendor/bin/thermal-engine -T
     class main
@@ -155,6 +155,7 @@ service thermal-engine /system/vendor/bin/thermal-engine -T
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     group root
+    disabled
 
 service adsprpcd /system/bin/adsprpcd
     class main
@@ -192,15 +193,15 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
     group radio diag inet log
     disabled
 
-service imscmservice /system/bin/imscmservice
-    class main
-    user system
-    group radio diag inet log
-    disabled
+#service imscmservice /system/bin/imscmservice
+#    class main
+#    user system
+#    group radio diag inet log
+#    disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
-    start imscmservice
+#    start imscmservice
 
 service energy-awareness /system/bin/energy-awareness
     class main
