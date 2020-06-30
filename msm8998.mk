@@ -319,5 +319,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/ofono.override:system/halium/etc/init/ofono.override \
     $(LOCAL_PATH)/ubports/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
     $(LOCAL_PATH)/ubports/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
-    $(LOCAL_PATH)/ubports/touch.pa:system/halium/etc/pulse/touch.pa
+    $(LOCAL_PATH)/ubports/touch.pa:system/halium/etc/pulse/touch.pa \
+    $(LOCAL_PATH)/ubports/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubports/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server
 
