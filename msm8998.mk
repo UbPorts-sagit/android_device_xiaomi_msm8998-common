@@ -444,4 +444,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubports/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
-    $(LOCAL_PATH)/ubports/ril_subscription.conf:system/halium/etc/ofono/ril_subscription.conf
+    $(LOCAL_PATH)/ubports/ril_subscription.conf:system/halium/etc/ofono/ril_subscription.conf \
+    $(LOCAL_PATH)/ubports/apparmor/usr.lib.telepathy.telepathy-ofono:system/halium/etc/apparmor.d/local/usr.lib.telepathy.telepathy-ofono
