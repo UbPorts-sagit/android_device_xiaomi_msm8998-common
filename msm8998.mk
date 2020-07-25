@@ -321,5 +321,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
     $(LOCAL_PATH)/ubports/touch.pa:system/halium/etc/pulse/touch.pa \
     $(LOCAL_PATH)/ubports/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
-    $(LOCAL_PATH)/ubports/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server
-
+    $(LOCAL_PATH)/ubports/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/ubports/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml
