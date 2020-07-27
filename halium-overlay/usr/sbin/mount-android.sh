@@ -34,11 +34,19 @@ parse_mount_flags() {
 
 echo "checking for vendor mount point"
 
+vendor_images="/userdata/vendor.img /var/lib/lxc/android/vendor.img"
+for image in $vendor_images; do
+    if [ -e $image ]; then
+        echo "mounting vendor from $image"
+        mount $image /vendor -o ro
+    fi
+done
+
 sys_vendor="/sys/firmware/devicetree/base/firmware/android/fstab/vendor"
-if [ -e $sys_vendor ]; then
+if [ -e $sys_vendor ] && ! mountpoint -q -- /vendor; then
     label=$(cat $sys_vendor/dev | awk -F/ '{print $NF}')
     path=$(find_partition_path $label)
-    [ ! -e "$path" ] && exit "Error vendor not found"
+    [ ! -e "$path" ] && echo "Error vendor not found" && exit
     type=$(cat $sys_vendor/type)
     options=$(parse_mount_flags $(cat $sys_vendor/mnt_flags))
     echo "mounting $path as /vendor"
@@ -65,7 +73,7 @@ sys_persist="/sys/firmware/devicetree/base/firmware/android/fstab/persist"
 if [ -e $sys_persist ]; then
     label=$(cat $sys_persist/dev | awk -F/ '{print $NF}')
     path=$(find_partition_path $label)
-    # [ ! -e "$path" ] && exit "Error persist not found"
+    # [ ! -e "$path" ] && echo "Error persist not found" && exit
     type=$(cat $sys_persist/type)
     options=$(parse_mount_flags $(cat $sys_persist/mnt_flags))
     echo "mounting $path as /mnt/vendor/persist"
