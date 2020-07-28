@@ -1,2 +1,5 @@
 # Dualsim support
 ril.num_slots=2
+
+# Wifi display
+ubuntu.widi.supported=1
