@@ -82,7 +82,7 @@ fi
 
 # Assume there's only one fstab in vendor
 fstab=$(ls /vendor/etc/fstab*)
-[ ! -e "$fstab" ] && echo "fstab not found" && exit
+[ -z "$fstab" ] && echo "fstab not found" && exit
 
 echo "checking fstab $fstab for additional mount points"
 
