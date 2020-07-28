@@ -232,3 +232,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from proprietary files
 include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
+
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
