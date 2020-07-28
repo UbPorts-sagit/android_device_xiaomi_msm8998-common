@@ -24,3 +24,6 @@
 
 # Apps should be able to read translations	
 /usr/share/qt5/translations/** r,
+
+# Allow access to QT5 libs
+/usr/lib/@{multiarch}/qt5/**  m,
