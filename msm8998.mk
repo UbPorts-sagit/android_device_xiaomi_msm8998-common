@@ -444,4 +444,6 @@ PRODUCT_PACKAGES += \
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
-    $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
+    $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/ofono/main.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ofono/main.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/ofono/ril_subscription.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ofono/ril_subscription.conf
