@@ -299,7 +299,8 @@ PRODUCT_PACKAGES += \
     libmedia_compat_layer \
     libui_compat_layer \
     libsf_compat_layer \
-    minisfservice
+    minisfservice \
+    libminikin
 
 # Droidmedia
 MINIMEDIA_SENSORSERVER_DISABLE := 1
