@@ -283,13 +283,6 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Ubuntu Touch Mir/hybris integration
 PRODUCT_PACKAGES += \
-    libaudioflingerglue \
-    libminisf \
-    miniafservice \
-    minimediaservice \
-    gst-droid \
-    libmedia_compat_layer \
-    libsf_compat_layer \
     libubuntu_application_api \
     libcameraservice \
     libdroidmedia \
@@ -300,7 +293,11 @@ PRODUCT_PACKAGES += \
     libui_compat_layer \
     libsf_compat_layer \
     minisfservice \
-    libminikin
+    libminisf \
+    libaudioflingerglue \
+    miniafservice \
+    libminikin \
+    libgui
 
 # Droidmedia
 MINIMEDIA_SENSORSERVER_DISABLE := 1
