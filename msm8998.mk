@@ -305,7 +305,9 @@ MINIMEDIA_SENSORSERVER_DISABLE := 1
 # telepathy-ofono quirks
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.t-o.quirk.forcesink=sink.primary_output \
-    ro.t-o.quirk.forcesource=source.primary_input
+    ro.t-o.quirk.forcesource=source.primary_input \
+    ro.build.qti_bsp.abi=1 \
+    ubuntu.widi.supported=true
 
 # droidmedia doesn't support HAL3 yet
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
