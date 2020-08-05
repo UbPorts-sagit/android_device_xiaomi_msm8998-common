@@ -171,6 +171,10 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
+    # Halium WiFi                   
+    write /sys/module/wlan/parameters/fwpath "sta"
+    write /dev/wcnss_wlan "1"
+
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
@@ -425,13 +429,13 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-#service cnss-daemon /system/bin/cnss-daemon -n -l
-#    class late_start
-#    user system
-#    group system inet net_admin wifi
+service cnss-daemon /system/bin/cnss-daemon -n -l
+    class late_start
+    user system
+    group system inet net_admin wifi
 
-#on property:sys.shutdown.requested=*
-#    stop cnss-daemon
+on property:sys.shutdown.requested=*
+    stop cnss-daemon
 
 service loc_launcher /system/bin/loc_launcher
     # loc_launcher will start as root and set its uid to gps
