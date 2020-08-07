@@ -1,9 +1,9 @@
- 
 # vim:syntax=apparmor
 # ------------------------------------------------------------------
 #
 #    Copyright (C) 2002-2009 Novell/SUSE
 #    Copyright (C) 2009-2011 Canonical Ltd.
+#    Copyright (C) 2019-2020 Dreemurrs Embedded Labs
 #
 #    This program is free software; you can redistribute it and/or
 #    modify it under the terms of version 2 of the GNU General Public
@@ -43,11 +43,6 @@
   # be required but applications fail without it. journald doesn't leak
   # anything when reading so this is ok.
   /{,var/}run/systemd/journal/stdout rw,
-
-  /socket/property_service       wr,
-  /dev/tty                       rw,
-  /proc/cmdline                  r,
-  /socket/logdw                  rw,
 
   /usr/lib{,32,64}/arm-linux-gnueabihf/**  mr,
   /usr/lib{,32,64}/locale/**             mr,
@@ -102,15 +97,14 @@
   #  /android/system/vendor/lib{,64}
   #  /odm/lib{,64}
   #  /android/odm/lib{,64}
-  /{,android/}vendor/lib{,32,64}/**           r,
-  /{,android/}vendor/lib{,32,64}/**.so        m,
-  /{,android/}system/lib{,32,64}/**           r,
-  /{,android/}system/lib{,32,64}/**.so        m,
-  /{,android/}system/etc{,32,64}/**           m,
-  /{,android/}system/vendor/lib{,32,64}/**    r,
-  /{,android/}system/vendor/lib{,32,64}/**.so m,
-  /{,android/}odm/lib{,32,64}/**    r,
-  /{,android/}odm/lib{,32,64}/**.so m,
+  /{,android/}vendor/lib{,64}/**           r,
+  /{,android/}vendor/lib{,64}/**.so        m,
+  /{,android/}system/lib{,64}/**           r,
+  /{,android/}system/lib{,64}/**.so        m,
+  /{,android/}system/vendor/lib{,64}/**    r,
+  /{,android/}system/vendor/lib{,64}/**.so m,
+  /{,android/}odm/lib{,64}/**    r,
+  /{,android/}odm/lib{,64}/**.so m,
 
   # /dev/null is pretty harmless and frequently used
   /dev/null                      rw,
@@ -119,6 +113,9 @@
   # recent glibc uses /dev/full in preference to /dev/null for programs
   # that don't have open fds at exec()
   /dev/full                      rw,
+  /dev/tty                       rw,
+  /socket/property_service       rw,
+  /socket/logdw                  rw,
 
   # Sometimes used to determine kernel/user interfaces to use
   @{PROC}/sys/kernel/version     r,
@@ -132,6 +129,21 @@
   @{PROC}/cpuinfo                r,
   /sys/devices/system/cpu/online r,
 
+  # Currently, AppArmor does not work properly yet, so this is a list of
+  # things to be whitelisted:
+  @{PROC}/vmstat                 r,
+  @{PROC}/@{pid}/loginuid        r,
+  @{PROC}/@{pid}/task/@{tid}/status r,
+  @{PROC}/@{pid}/mounts          r,
+  /sys/devices/soc0/soc_id       r,
+  /sys/devices/soc/1a00000.qcom,mdss_mdp/caps r,
+  @{HOME}/**                     rw,
+  /dev/disk/by-label/            r,
+  /opt/**                        r,
+  /etc/passwd                    r,
+  /etc/nsswitch.conf             r,
+  /var/lib/extrausers/passwd     r,
+
   # glibc's *printf protections read the maps file
   @{PROC}/@{pid}/maps            r,
 
@@ -140,10 +152,9 @@
 
   # some applications will display license information
   /usr/share/common-licenses/**  r,
-
   # some applications need translations
   /usr/share/qt5/translations/** r,
-  
+
   # glibc statvfs
   @{PROC}/filesystems            r,
 
@@ -190,7 +201,7 @@
 
   # Workaround https://launchpad.net/bugs/359338 until upstream handles stacked
   # filesystems generally. This does not appreciably decrease security with
-  # Ubuntu profiles because the user is expected to have access to files owned
+  # Ubuntu profiles because the user is exp                                                                           ected to have access to files owned
   # by him/her. Exceptions to this are explicit in the profiles. While this rule
   # grants access to those exceptions, the intended privacy is maintained due to
   # the encrypted contents of the files in this directory. Files in this
