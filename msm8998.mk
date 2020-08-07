@@ -301,6 +301,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
+## Power off charging mode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
