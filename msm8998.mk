@@ -224,6 +224,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8998
 
+## Power off charging mode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
