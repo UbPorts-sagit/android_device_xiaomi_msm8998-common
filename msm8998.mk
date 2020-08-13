@@ -192,7 +192,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -302,6 +303,13 @@ PRODUCT_PACKAGES += \
     miniafservice \
     libminikin \
     libgui
+
+## Avoid unsupported UBWC buffers on VENC
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.gralloc.gfx_ubwc_disable=1 \
+    debug.gralloc.gfx_ubwc_disable_=1 \
+    debug.gralloc.enable_fb_ubwc=0 \
+    video.disable.ubwc=1
 
 # Droidmedia
 MINIMEDIA_SENSORSERVER_DISABLE := 1
