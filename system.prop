@@ -3,3 +3,6 @@ ril.num_slots=2
 
 # Wifi display
 ubuntu.widi.supported=1
+
+# Ubuntu Touch
+ro.ubuntu.camera_plugin=aal
