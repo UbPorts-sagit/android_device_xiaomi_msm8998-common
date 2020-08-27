@@ -340,5 +340,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubports/apparmor.d/hardware/graphics.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android \
     $(LOCAL_PATH)/ubports/apparmor.d/hardware/video.d/apparmor-easyprof-ubuntu_android:system/halium/usr/share/apparmor/hardware/video.d/apparmor-easyprof-ubuntu_android \
     $(LOCAL_PATH)/ubports/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
-    $(LOCAL_PATH)/ubports/timekeeper.conf:system/halium/etc/init/timekeeper.conf
-
+    $(LOCAL_PATH)/ubports/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
+    $(LOCAL_PATH)/ubports/usb/mtp-server.conf:system/halium/usr/share/upstart/sessions/mtp-server.conf \
+    $(LOCAL_PATH)/ubports/usb/setupusb:system/halium/usr/share/usbinit/setupusb \
+    $(LOCAL_PATH)/ubports/usb/mtp-state.conf:system/halium/etc/init/mtp-state.conf
