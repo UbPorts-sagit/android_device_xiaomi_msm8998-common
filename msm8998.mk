@@ -446,6 +446,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/halium-overlay/etc/init/mtp-state.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/mtp-state.conf \
     $(LOCAL_PATH)/halium-overlay/etc/init/ssh.override:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/ssh.override \
     $(LOCAL_PATH)/halium-overlay/etc/init/usb-tethering.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/usb-tethering.conf \
     $(LOCAL_PATH)/halium-overlay/etc/ofono/main.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/ofono/main.conf \
@@ -453,4 +454,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/etc/profile.d/halium-9.sh:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/profile.d/halium-9.sh \
     $(LOCAL_PATH)/halium-overlay/etc/pulse/touch-android9.pa:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/pulse/touch-android9.pa \
     $(LOCAL_PATH)/halium-overlay/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9 \
-    $(LOCAL_PATH)/halium-overlay/usr/share/repowerd/device-configs/config-default.xml:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/repowerd/device-configs/config-default.xml
+    $(LOCAL_PATH)/halium-overlay/usr/share/repowerd/device-configs/config-default.xml:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/repowerd/device-configs/config-default.xml \
+    $(LOCAL_PATH)/halium-overlay/usr/share/upstart/sessions/mtp-server.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/upstart/sessions/mtp-server.conf \
+    $(LOCAL_PATH)/halium-overlay/usr/share/usbinit/setupusb:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/usbinit/setupusb
