@@ -181,7 +181,7 @@ def disable():
 def updateAndroidImg():
     if not os.path.exists(ANBOX_DATA):
         os.makedirs(ANBOX_DATA)
-    os.system("sudo wget -q --show-progress -O /home/phablet/anbox-data/android.img http://cdimage.ubports.com/anbox-images/android-armhf-64binder.img")
+    os.system("sudo wget -q --show-progress -O /home/phablet/anbox-data/android.img https://www.dropbox.com/s/m6jo8st7v60ywfc/android.img?dl=1")
 
 
 def upgrade():
