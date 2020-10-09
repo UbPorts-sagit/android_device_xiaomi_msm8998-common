@@ -215,6 +215,9 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := true
 
+# libmedia_compat_layer for 64bit
+HYBRIS_MEDIA_32_BIT_ONLY := false
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 #BOARD_WLAN_DEVICE := qcwcn
