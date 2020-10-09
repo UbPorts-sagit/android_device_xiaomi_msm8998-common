@@ -430,7 +430,8 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 # Ubuntu
 PRODUCT_PACKAGES += \
     libbiometry_fp_api \
-    libubuntu_application_api
+    libubuntu_application_api \
+    libmedia_compat_layer
     
 # init scripts
 PRODUCT_PACKAGES += \
