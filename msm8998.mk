@@ -418,4 +418,6 @@ PRODUCT_PACKAGES += \
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/70-sagit.rules:system/halium/lib/udev/rules.d/70-android.rules \
-    $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
+    $(LOCAL_PATH)/halium-overlay/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/rootdir/etc/on-post-fs.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/on-post-fs.rc \
+    $(LOCAL_PATH)/rootdir/bin/on-post-fs-data.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/on-post-fs-data.sh
