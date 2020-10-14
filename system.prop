@@ -1,2 +1,8 @@
 # Dualsim support
 ril.num_slots=2
+
+# Avoid unsupported UBWC buffers on VENC
+debug.gralloc.gfx_ubwc_disable=1
+debug.gralloc.gfx_ubwc_disable_=1
+debug.gralloc.enable_fb_ubwc=0
+video.disable.ubwc=1
