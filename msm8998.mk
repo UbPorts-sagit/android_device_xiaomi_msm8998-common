@@ -440,6 +440,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensorservice
 
+# HFD
+PRODUCT_PACKAGES += \
+    libhfd_api
+
 # Misc
 PRODUCT_PACKAGES += \
     libandroid \
