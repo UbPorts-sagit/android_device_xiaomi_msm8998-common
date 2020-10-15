@@ -408,6 +408,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensorservice
 
+# HFD
+PRODUCT_PACKAGES += \
+    libhfd_api
+
 # init scripts
 PRODUCT_PACKAGES += \
     init.halium.rc \
