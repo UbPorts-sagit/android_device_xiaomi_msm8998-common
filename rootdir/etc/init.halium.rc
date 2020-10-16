@@ -25,6 +25,25 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on boot
+
+service minimedia /system/bin/minimediaservice
+    class main
+    user media
+    group audio camera
+    ioprio rt 4
+
+service minisf /system/bin/minisfservice
+    setenv LD_PRELOAD /system/lib/libsurfaceflinger.so
+    class main
+    user system
+    group graphics
+
+service miniaf /system/bin/miniafservice
+    class main
+    user system
+    group audio
+
 on post-fs-data
     mkdir /data/vendor_de/0 0700 system system
     mkdir /data/vendor_de/0/fpdata 0700 system system
