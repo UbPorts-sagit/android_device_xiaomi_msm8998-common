@@ -440,4 +440,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/usr/bin/anbox-tool:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/bin/anbox-tool \
     $(LOCAL_PATH)/halium-overlay/etc/init/lxc-android-config.override:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/lxc-android-config.override \
     $(LOCAL_PATH)/halium-overlay/etc/init/mount-android.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/mount-android.conf \
-    $(LOCAL_PATH)/halium-overlay/usr/sbin/mount-android.sh:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/sbin/mount-android.sh
+    $(LOCAL_PATH)/halium-overlay/usr/sbin/mount-android.sh:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/sbin/mount-android.sh \
+    $(LOCAL_PATH)/halium-overlay/vendor/lib64/libhdr_tm.so:$(TARGET_COPY_OUT_SYSTEM)/halium/vendor/lib64/libhdr_tm.so
