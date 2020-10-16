@@ -440,7 +440,13 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     libandroid \
-    libandroid_runtime
+    libandroid_runtime \
+    android.frameworks.displayservice@1.0 \
+    drmserver \
+    mediadrmserver \
+    mediaextractor \
+    miniafservice \
+    minisfservice
 
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
