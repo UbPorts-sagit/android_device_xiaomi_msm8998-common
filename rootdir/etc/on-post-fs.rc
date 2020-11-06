@@ -1,2 +1,6 @@
 on post-fs-data
     exec - root -- /system/bin/sh /system/bin/on-post-fs-data.sh
+
+on init
+    setprop ro.ril.power_collapse 0
+    setprop ro.ril.disable.power.collapse 1
