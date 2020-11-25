@@ -5,8 +5,8 @@ GADGET_DIR=$CONFIG_DIR/g1
 CONFIG_NAME="c.1"
 
 SERIALNUMBER=`getprop ro.serialno`             # e.g. "0123456789ABCDEF"
-MANUFACTURER=`getprop ro.product.manufacturer` # e.g. "Volla"
-PRODUCT=`getprop ro.product.model`             # e.g. "Phone"
+MANUFACTURER=`getprop ro.product.vendor.manufacturer` # e.g. "Volla"
+PRODUCT=`getprop ro.product.vendor.model`             # e.g. "Phone"
 CONTROLLER=`getprop sys.usb.controller`        # e.g. "musb-hdrc"
 
 write() {
