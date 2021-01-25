@@ -132,6 +132,11 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor \
+    libbthost_if
+
 # Camera
 #PRODUCT_PACKAGES += \
 #    Snap
@@ -372,12 +377,11 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
+    wificond \
+    libwpa_client
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
@@ -421,12 +425,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libandroid \
     libandroid_runtime \
+    libnetutils \
     android.frameworks.displayservice@1.0 \
     drmserver \
     mediadrmserver \
     mediaextractor \
     miniafservice \
-    minisfservice
+    minisfservice \
+    rild \
+    libprotobuf-cpp-full \
+    android.hardware.radio@1.0 \
+    android.hardware.contexthub@1.0 \
+    android.hardware.media.omx@1.0-service \
+    libdrm \
+    libion \
+    vendor.display.config@1.7 \
+    crash_dump.policy
 
 # Ubuntu Touch overlay
 PRODUCT_COPY_FILES += \
