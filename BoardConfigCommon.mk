@@ -54,6 +54,8 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_CMDLINE += systemd.legacy_systemd_cgroup_controller=yes
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+# CMDLINES for Halium
+BOARD_KERNEL_CMDLINE += console=tty0
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
