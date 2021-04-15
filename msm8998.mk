@@ -463,6 +463,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium-overlay/usr/share/upstart/sessions/mtp-server.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/upstart/sessions/mtp-server.conf \
     $(LOCAL_PATH)/halium-overlay/usr/share/usbinit/setupusb:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/share/usbinit/setupusb \
     $(LOCAL_PATH)/halium-overlay/usr/bin/anbox-tool:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/bin/anbox-tool \
+    $(LOCAL_PATH)/halium-overlay/etc/init/charger-reboot.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/charger-reboot.conf \
     $(LOCAL_PATH)/halium-overlay/etc/init/lxc-android-config.override:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/lxc-android-config.override \
     $(LOCAL_PATH)/halium-overlay/etc/init/mount-android.conf:$(TARGET_COPY_OUT_SYSTEM)/halium/etc/init/mount-android.conf \
     $(LOCAL_PATH)/halium-overlay/usr/sbin/mount-android.sh:$(TARGET_COPY_OUT_SYSTEM)/halium/usr/sbin/mount-android.sh \
