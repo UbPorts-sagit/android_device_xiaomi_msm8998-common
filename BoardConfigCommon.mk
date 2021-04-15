@@ -240,3 +240,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
 
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
+
+# Use local initramfs from initramfs.gz
+BOARD_USE_LOCAL_INITRD := true
